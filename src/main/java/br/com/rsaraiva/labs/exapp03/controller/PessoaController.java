@@ -3,6 +3,7 @@ package br.com.rsaraiva.labs.exapp03.controller;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 import br.com.rsaraiva.labs.exapp03.model.Pessoa;
+import br.com.rsaraiva.labs.exapp03.service.PessoaService;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,15 +11,16 @@ import java.util.List;
 public class PessoaController {
     
     private Result result;
+    private PessoaService pessoaService;
     
     private List<Pessoa> pessoas = new ArrayList();
-    private Pessoa pessoa = new Pessoa();
 
-    public PessoaController(Result result) {
+    public PessoaController(Result result, PessoaService pessoaService) {
+        
         this.result = result;
-        pessoas.add(new Pessoa("Guilherme", 30));
-        pessoas.add(new Pessoa("Jonas", 25));
-        pessoas.add(new Pessoa("Paulo", 18));
+        this.pessoaService = pessoaService;
+        
+        pessoas = pessoaService.listaTudo();
     }
     
     public List<Pessoa> lista() {
@@ -26,11 +28,10 @@ public class PessoaController {
     }
     
     public void form() {
-        pessoa = new Pessoa();
     }
     
     public void salva(Pessoa pessoa) {
-        pessoas.add(pessoa);
+        pessoaService.salva(pessoa);
         result.redirectTo(this).lista();
     }
 }
