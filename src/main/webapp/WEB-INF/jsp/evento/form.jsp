@@ -9,8 +9,16 @@
     <body>
         <h1>Eventos</h1>
         <form method="post" action="<c:url value='/evento/salva'/>">
-            <input type="text" name="evento.nome"/>
-            <input type="text" name="evento.inicio"/>
+            <ul>
+                <li>
+                    Nome: <br/>
+                    <input type="text" name="evento.nome"/>
+                </li>
+                <li>
+                    Início: <br/>
+                    <input type="text" name="evento.inicio"/>
+                </li>
+            </ul>
             <input type="submit" value="salvar"/>
         </form>
     </body>
