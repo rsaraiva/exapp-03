@@ -1,3 +1,4 @@
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -6,7 +7,7 @@
             $(document).ready(function() {
                 $('#tabela_pessoas').dataTable({
                     "oLanguage": {
-                        "sLengthMenu": "Mostar _MENU_ registros por página",
+                        "sLengthMenu": "Mostar _MENU_ registros por pÃ¡gina",
                         "sZeroRecords": "Nothing found - sorry",
                         "sInfo": "Exibindo _START_ a _END_ de _TOTAL_ registros",
                         "sInfoEmpty": "Exibindo 0 a 0 de 0 registros",
@@ -14,8 +15,8 @@
                         "sSearch": "Pesquisar:",
                         "oPaginate": {
                             "sFirst": "Primeiro",
-                            "sLast": "Último",
-                            "sNext": "Próximo",
+                            "sLast": "Ãšltimo",
+                            "sNext": "PrÃ³ximo",
                             "sPrevious": "Anterior"
                         }
                     },
